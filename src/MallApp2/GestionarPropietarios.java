@@ -1,4 +1,10 @@
 package MallApp2;
+/**
+    * Este campo es para importar las librerias utilizadas en el proyecto
+    *
+    * @author Juan David Zapata
+    * @version 09/07/2015
+    **/
 
 import java.awt.Color;
 import java.awt.Container;
@@ -48,7 +54,7 @@ public class GestionarPropietarios extends JFrame {
      *
      * @author Juan David Zapata
      * @version 09/07/2015
-     */
+     **/
     public GestionarPropietarios() {
         setTitle("Gestionar Propietarios");
         setDefaultCloseOperation(EXIT_ON_CLOSE);

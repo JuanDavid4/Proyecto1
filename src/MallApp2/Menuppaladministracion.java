@@ -1,5 +1,10 @@
 package MallApp2;
-
+/**
+    * Este campo es para importar las librerias utilizadas en el proyecto
+    *
+    * @author Juan David Zapata
+    * @version 09/07/2015
+    **/
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Font;
@@ -17,15 +22,25 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import static javax.swing.SwingConstants.CENTER;
 import javax.swing.border.Border;
-
+    /**
+    * Este campo creamos un Jframe Menuppaladministracion
+    *
+    * @author Juan David Zapata
+    * @version 09/07/2015
+    **/
 public class Menuppaladministracion extends JFrame {
-
+    // Declaramos las variables
     JLabel labelBienvenido;
     JLabel labelGestionarlocales;
     JLabel labelAdministrarpropietarios;
     JLabel labelcambiarpassword;
     JButton botonAtras;
-
+    /**
+    * Este campo damos las caracteristicas al JFrame
+    *
+    * @author Juan David Zapata
+    * @version 09/07/2015
+    **/
     public Menuppaladministracion() {
 
         setTitle("Menu Principal Administración");
@@ -87,6 +102,11 @@ public class Menuppaladministracion extends JFrame {
 
             }
         });
+        /**
+        * Este campo adiccionamos los objetos al formulario
+        * @author Juan David Zapata
+        * @version 09/07/2015
+        **/
         add(labelAdministrarpropietarios);
 
         labelGestionarlocales = new JLabel("Gestionar Locales");
@@ -146,7 +166,13 @@ public class Menuppaladministracion extends JFrame {
 
             }
         });
-
+        
+        /**
+        * Este campo damos accion al boton atras
+        *
+        * @author Juan David Zapata
+        * @version 09/07/2015
+        **/
         botonAtras = new JButton("Atras");
         botonAtras.addMouseListener(new MouseListener() {
 

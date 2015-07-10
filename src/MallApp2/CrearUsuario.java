@@ -1,5 +1,10 @@
 package MallApp2;
-// En este campo importamos las librerias necesarias
+/**
+    * Este campo es para importar las librerias utilizadas en el proyecto
+    *
+    * @author Juan David Zapata
+    * @version 09/07/2015
+    **/
 
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -24,7 +29,7 @@ import javax.swing.JTextField;
  *
  * @author Juan David Zapata
  * @version 09/07/2015
- */
+ **/
 public class CrearUsuario extends JFrame {
 
     // Declaracion de variables
@@ -155,7 +160,7 @@ public class CrearUsuario extends JFrame {
         *
         * @author Juan David Zapata
         * @version 09/07/2015
-        */    
+        **/    
             public void actionPerformed(ActionEvent e) {
                 String nombre = textonombre.getText();
                 String apellido = textoApellido.getText();

@@ -1,4 +1,10 @@
 package MallApp2;
+/**
+    * Este campo es para importar las librerias utilizadas en el proyecto
+    *
+    * @author Juan David Zapata
+    * @version 09/07/2015
+    */
 
 import java.awt.Dimension;
 import java.awt.Graphics;

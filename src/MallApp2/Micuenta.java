@@ -1,4 +1,10 @@
 package MallApp2;
+/**
+    * Este campo es para importar las librerias utilizadas en el proyecto
+    *
+    * @author Juan David Zapata
+    * @version 09/07/2015
+    **/
 
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -37,7 +43,7 @@ public class Micuenta extends JFrame {
     JTextField textoPass;
     JTextField textoConfirmarpass;
     JButton botoncrearusuario;
-    JButton botonreestablecer;
+    JButton botonModificar;
     JComboBox combo1;
 
     public Micuenta() {
@@ -143,10 +149,15 @@ public class Micuenta extends JFrame {
                 }
             }
         });
-
-        botonreestablecer = new JButton("Reestablecer");
-        add(botonreestablecer);
-        botonreestablecer.addActionListener(new ActionListener() {
+        /**
+    * Este campo creamos un Jframe Menuppaladministracion
+    *
+    * @author Juan David Zapata
+    * @version 09/07/2015
+    **/
+        botonModificar= new JButton("Modificar");
+        add(botonModificar);
+        botonModificar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ev) {
                 comboTipodocumento.setSelectedIndex(0);
                 textoDocumento.setText("");

@@ -1,4 +1,11 @@
 package MallApp2;
+/**
+    * Este campo es para importar las librerias utilizadas en el proyecto
+    * la clase Usuario nos permite gestionar los campos del usuario
+    *
+    * @author Juan David Zapata
+    * @version 09/07/2015
+    */
 
 public class Usuario {
 

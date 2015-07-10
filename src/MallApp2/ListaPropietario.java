@@ -1,4 +1,10 @@
 package MallApp2;
+/**
+    * Este campo es para importar las librerias utilizadas en el proyecto
+    *
+    * @author Juan David Zapata
+    * @version 09/07/2015
+    **/
 
 import java.util.Iterator;
 
@@ -12,11 +18,11 @@ public class ListaPropietario {
         nroNodos = 0;
     }
     /**
-    * Metodo para Insertar los Usuario
+    * Metodo para Insertar los Propietario
     *
     * @author Juan David Zapata
     * @version 09/07/2015
-    */
+    **/
 
     public void insertarAlfinal(Propietario propietario) {
         Nodo p = new Nodo();
@@ -35,10 +41,10 @@ public class ListaPropietario {
         nroNodos++;
     }
     /**
-    * Metodo para contar los nodos de los Usuarios   *
+    * Metodo para contar los nodos de los Propietario   *
     * @author Juan David Zapata
     * @version 09/07/2015
-    */
+    **/
 
     public int contarnodos() {
         Nodo t = cab;
@@ -55,7 +61,7 @@ public class ListaPropietario {
     *
     * @author Juan David Zapata
     * @version 09/07/2015
-    */
+    **/
     public Propietario infoEnPosicion(int pos) {
         Nodo t = cab;
         if (pos <= nroNodos) {
@@ -72,7 +78,7 @@ public class ListaPropietario {
     *
     * @author Juan David Zapata
     * @version 09/07/2015
-    */
+    **/
     public void borrar(int pos) {
         Nodo t = cab;
         if (pos <= nroNodos) {

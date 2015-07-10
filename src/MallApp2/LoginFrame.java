@@ -1,4 +1,10 @@
 package MallApp2;
+/**
+    * Este campo es para importar las librerias utilizadas en el proyecto
+    *
+    * @author Juan David Zapata
+    * @version 09/07/2015
+    */
 
 import java.awt.Color;
 import java.awt.Cursor;
@@ -40,9 +46,14 @@ public class LoginFrame extends JFrame {
     JButton botonUsuarioNoRegistrado;
     JButton botonadministracion;
     ImageIcon icoIngresar, Fondo;
-    //JFrame ventana;
     JLabel img;
-
+    /**
+    * Este espacio del codigo es para dar las caracteristicas a la ventana
+    *
+    * @author Juan David Zapata
+    * @version 09/07/2015
+    */
+    
     public LoginFrame() {
 
         setTitle("Acceso al sistema");
@@ -111,6 +122,12 @@ public class LoginFrame extends JFrame {
             }
         });
         add(labelRegistrar);
+        /**
+          * Este campo le damos funcionalidad al boton ingresar
+          *
+          * @author Juan David Zapata
+          * @version 09/07/2015
+          **/
 
         botonIngresar = new JButton("Ingresar");
         add(botonIngresar);
@@ -120,6 +137,12 @@ public class LoginFrame extends JFrame {
                 ingresar();
             }
         });
+        /**
+        *En este campo agregamos la funcionalidad del botonUsuarioNoRegistrar
+        *
+        * @author Juan David Zapata
+        * @version 09/07/2015
+        **/
 
         botonUsuarioNoRegistrado = new JButton("Usuarios no registrados");
         add(botonUsuarioNoRegistrado);
@@ -156,7 +179,12 @@ public class LoginFrame extends JFrame {
         setLocationRelativeTo(null); //Centra el jframe en la pantalla
         setVisible(true);
     }
-
+    /**
+    * Metodo nos permite ingresar ala sistema
+    *
+    * @author Juan David Zapata
+    * @version 09/07/2015
+    **/
     void ingresar() {
 
         String correo = textoCorreo.getText();

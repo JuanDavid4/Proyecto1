@@ -1,5 +1,10 @@
 package MallApp2;
-// En este campo importamos las librerias necesarias
+/**
+    * Este campo es para importar las librerias utilizadas en el proyecto
+    *
+    * @author Juan David Zapata
+    * @version 09/07/2015
+    **/
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Font;
@@ -22,7 +27,7 @@ import javax.swing.border.Border;
  * En esta clase gestionamos los clientes ya resgistrados 
  * @author Juan David Zapata
  * @version 09/07/2015
- */
+ **/
 
 public class ClienteRegistrado extends JFrame {
     // Declaracion de variables
@@ -45,7 +50,7 @@ public class ClienteRegistrado extends JFrame {
     *
     * @author Juan David Zapata
     * @version 09/07/2015
-    */
+    **/
         setTitle("Cliente Registrado");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         JPanel contenidoPanelCR = new JPanel();
@@ -112,7 +117,7 @@ public class ClienteRegistrado extends JFrame {
     *
     * @author Juan David Zapata
     * @version 09/07/2015
-    */
+    **/
         gbc.gridx = 0;//Columna
         gbc.gridy = 0;//Fila
         gbc.gridwidth = 2;
