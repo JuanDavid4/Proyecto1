@@ -2,13 +2,6 @@ package MallApp2;
 
 import java.util.Iterator;
 
-/**
-    * Clase para gestionar las listas de almacenamiento de 
-    *
-    * @author Juan David Zapata
-    * @version 09/07/2015
-    */
-
 public class ListaPropietario {
 
     public Nodo cab, cola;
@@ -19,11 +12,12 @@ public class ListaPropietario {
         nroNodos = 0;
     }
     /**
-    * Metodo para Insertar los Propietarios
+    * Metodo para Insertar los Usuario
     *
     * @author Juan David Zapata
     * @version 09/07/2015
     */
+
     public void insertarAlfinal(Propietario propietario) {
         Nodo p = new Nodo();
 
@@ -41,11 +35,11 @@ public class ListaPropietario {
         nroNodos++;
     }
     /**
-    * Metodo para contar los nodos de la lista
-    *
+    * Metodo para contar los nodos de los Usuarios   *
     * @author Juan David Zapata
     * @version 09/07/2015
     */
+
     public int contarnodos() {
         Nodo t = cab;
         int cont = 0;
@@ -57,12 +51,12 @@ public class ListaPropietario {
         return cont;
     }
     /**
-    * Metodo para obtener la informacion de los nodos
+    * Metodo para retornar la informacion de la posicion en la lista
     *
     * @author Juan David Zapata
     * @version 09/07/2015
     */
-    public Usuario infoEnPosicion(int pos) {
+    public Propietario infoEnPosicion(int pos) {
         Nodo t = cab;
         if (pos <= nroNodos) {
             for (int i = 1; i < pos; i++) {
@@ -74,7 +68,7 @@ public class ListaPropietario {
         }
     }
     /**
-    * Metodo para borrar los Propietarios
+    * Metodo para borrar los nodos de la lista
     *
     * @author Juan David Zapata
     * @version 09/07/2015
@@ -100,7 +94,7 @@ public class ListaPropietario {
         }
     }
 
-    public Iterator<Propietario> iterator() {
+    public Iterator<Usuario> iterator() {
         return new IteradorLista();
     }
 
@@ -114,8 +108,8 @@ public class ListaPropietario {
         }
 
         @Override
-        public Usuario next() {
-            Usuario estudiante = actual.info;
+        public Propietario next() {
+            Propietario estudiante = actual.info;
             actual = actual.sig;
             return estudiante;
         }
@@ -128,8 +122,7 @@ public class ListaPropietario {
 
     private static class Nodo {
 
-        private Usuario info;
+        private Propietario info;
         private Nodo sig, ant;
     }
 }
-

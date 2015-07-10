@@ -1,8 +1,6 @@
 package MallApp2;
 
-import java.util.ArrayList;
-
-class Propietario {
+public class Propietario {
 
     String cedula;
     String nombre;
@@ -10,7 +8,7 @@ class Propietario {
     String local1;
     Local local;
 
-    public static ListaPropietario usuarios = new ListaPropietario();
+    public static ListaPropietario propietarios = new ListaPropietario();
 
     public Propietario(String cedula, String nombre, Long celular, String local1, Local local) {
         this.cedula = cedula;
@@ -24,12 +22,12 @@ class Propietario {
         return nombre;
     }
     
-    public static Propietario getPropietario(Local localAbuscar) {
-        for (int i = 0; i < Propietario.(); i++) {
-            if(Propietario.get(i).local.numerodelocal == localAbuscar.numerodelocal) {
-                return Propietario.get(i);
-            }
-        }
-        return null;
-    }
+//    public static Propietario getPropietario(Local localAbuscar) {
+//        for (int i = 0; i < propietarios.contarnodos(); i++) {
+//            if(propietarios.infoEnPosicion(i).local.numerodelocal == localAbuscar.numerodelocal) {
+//                return propietarios.infoEnPosicion(i);
+//            }
+//        }
+//        return null;
+//    }
 }

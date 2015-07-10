@@ -23,6 +23,7 @@ import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 public class GestionarPropietarios extends JFrame {
+
     // En este campo declaramos las variables
     JScrollPane panelArriba;
     JPanel panelAbajo;
@@ -41,13 +42,13 @@ public class GestionarPropietarios extends JFrame {
     JTable tabla;
     JLabel labellocal;
     JTextField textolocal;
-    
+
     /**
-    * Metodo para gestionar los Propietarios
-    *
-    * @author Juan David Zapata
-    * @version 09/07/2015
-    */
+     * Metodo para gestionar los Propietarios
+     *
+     * @author Juan David Zapata
+     * @version 09/07/2015
+     */
     public GestionarPropietarios() {
         setTitle("Gestionar Propietarios");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -142,7 +143,7 @@ public class GestionarPropietarios extends JFrame {
         gbc.weighty = 1.0;
         gbc.fill = GridBagConstraints.BOTH;
         panelAbajo.add(textocelular, gbc);
-        
+
         gbc.gridx = 0;
         gbc.gridy = 6;
         gbc.gridwidth = 3;
@@ -151,7 +152,7 @@ public class GestionarPropietarios extends JFrame {
         gbc.weighty = 1.0;
         gbc.fill = GridBagConstraints.BOTH;
         panelAbajo.add(labellocal, gbc);
-        
+
         gbc.gridx = 3;
         gbc.gridy = 6;
         gbc.gridwidth = 2;
@@ -262,7 +263,7 @@ public class GestionarPropietarios extends JFrame {
                 String local1 = textolocal.getText();
 
                 Propietario PR = new Propietario(cedula, nombre, celular, local1, null);
-                Propietario.propietario;
+                Propietario.propietarios.insertarAlfinal(PR);
                 JOptionPane.showMessageDialog(null, "Propietario Agregado Correctamente",
                         "Informacion", JOptionPane.INFORMATION_MESSAGE);
                 borrartodo();
@@ -277,11 +278,11 @@ public class GestionarPropietarios extends JFrame {
                 String nombre = textoNombrePropietario.getText();
                 String cedula = textocedula.getText();
                 long celular = Long.parseLong(textocelular.getText());
-                
-                for (int i = 0; i < Propietario.propietarios.; i++) {
-                    if(Propietario.propietarios.get(i).cedula.equals(cedula)) {
-                        Propietario.propietarios.get(i).nombre = nombre;
-                        Propietario.propietarios.get(i).celular = celular;
+
+                for (int i = 0; i < Propietario.propietarios.contarnodos(); i++) {
+                    if (Propietario.propietarios.infoEnPosicion(i).equals(cedula)) {
+                        Propietario.propietarios.infoEnPosicion(i).nombre = nombre;
+                        Propietario.propietarios.infoEnPosicion(i).celular = celular;
                         actualizar();
                         break;
                     }
@@ -298,7 +299,7 @@ public class GestionarPropietarios extends JFrame {
                             "Error", JOptionPane.ERROR_MESSAGE);
                 } else {
                     int indice = tabla.getSelectedRow();
-                    Propietario.propietarios.remove(indice);
+                    Propietario.propietarios.borrar(indice);
                     actualizar();
                 }
             }
@@ -348,21 +349,21 @@ public class GestionarPropietarios extends JFrame {
         });
 
     }
+
     //Metodo que permite actualizar
     void actualizar() {
         String[] encabezados = new String[]{"Cedula", "Nombre", "# local", "tel. local", "celular"};
-        String[][] datos = new String[Propietario.propietarios.size()][5];
-        for (int i = 0; i < Propietario.propietarios.size(); i++) { //Recorrer todo lso propietarios
-            Propietario prop = Propietario.propietarios.get(i);
+        String[][] datos = new String[Propietario.propietarios.contarnodos()][5];
+        for (int i = 0; i < Propietario.propietarios.contarnodos(); i++) { //Recorrer todo lso propietarios
+            Propietario prop = Propietario.propietarios.infoEnPosicion(i);
             if (prop.local != null) { //Si tiene local
-                datos[i] = new String[]{prop.cedula,
-                    prop.nombre,
-                    prop.local1,
-                    prop.local.nombredelocal,
-                    Long.toString(prop.celular)};
+                datos[i] = new String[]{prop.nombre,
+                    prop.cedula,
+                    Long.toString(prop.celular),
+                    prop.local1,};
             } else { //Si no tiene local
-                datos[i] = new String[]{prop.cedula,
-                    prop.nombre, prop.local1, "", Long.toString(prop.celular)};
+                datos[i] = new String[]{prop.nombre,
+                    prop.cedula,Long.toString(prop.celular) , "",prop.local1 };
             }
         }
         tabla.setModel(new DefaultTableModel(datos, encabezados));
@@ -372,6 +373,8 @@ public class GestionarPropietarios extends JFrame {
         textoNombrePropietario.setText("");
         textocedula.setText("");
         textocelular.setText("");
+        textolocal.setText("");
+
     }
 
     public static void main(String[] arg) {

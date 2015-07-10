@@ -2,7 +2,7 @@ package MallApp2;
 
 import java.util.ArrayList;
 
-class Local {
+public class Local {
 
     int numerodelocal;
     String tipocontrato;
