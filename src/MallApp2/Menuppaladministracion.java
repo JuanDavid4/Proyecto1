@@ -45,6 +45,7 @@ public class Menuppaladministracion extends JFrame {
 
         setTitle("Menu Principal Administración");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+         setIconImage(new ImageIcon(getClass().getResource("/MallApp2/fondo.jpg")).getImage());
         JPanel contenidoPanelMPA = new JPanel();
         Border padding = BorderFactory.createEmptyBorder(70, 50, 50,70);
         contenidoPanelMPA.setBorder(padding);

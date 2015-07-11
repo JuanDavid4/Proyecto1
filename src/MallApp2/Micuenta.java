@@ -17,34 +17,36 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.Border;
 
 public class Micuenta extends JFrame {
 
-    JLabel labeltipodocumento;
-    JLabel labeldocumento;
-    JLabel labelapellidos;
-    JLabel labelnombre;
-    JLabel labeltelefono;
-    JLabel labelcelular;
-    JLabel labelmail;
-    JLabel labelgenero;
+    JLabel labelNombre;
+    JLabel labelApellido;
+    JComboBox<String> comboTipodocumento;
+    JLabel labelDocumento;
+    JLabel labelTelefono;
+    JLabel labelCelular;
+    JLabel labelGenero;
+    JLabel labelCorreo;
     JLabel labelpass;
     JLabel labelconfirmarpass;
-    JComboBox<String> comboTipodocumento;
-    JTextField textoDocumento;
-    JTextField textoApellidos;
+    
     JTextField textoNombre;
+    JTextField textoApellido;
+    JComboBox combo1;
+    JTextField textoDocumento;
     JTextField textoTelefono;
     JTextField textoCelular;
-    JTextField textoMail;
     JTextField textoGenero;
-    JTextField textoPass;
+    JTextField textoCorreo;
+    JTextField textoPass;       
     JTextField textoConfirmarpass;
     JButton botoncrearusuario;
     JButton botonModificar;
-    JComboBox combo1;
+    
 
     public Micuenta() {
         setTitle("Mi Cuenta");
@@ -57,68 +59,72 @@ public class Micuenta extends JFrame {
 
         setLayout(new GridLayout(12, 2, 0, 10));
 
-        labeltipodocumento = new JLabel("Tipo Documento");
-        add(labeltipodocumento);
+        labelNombre = new JLabel("Nombre");
+        add(labelNombre);
+
+        textoNombre = new JTextField();
+        add(textoNombre);
+
+        labelApellido = new JLabel("Apellido");
+        add(labelApellido);
+
+        textoApellido = new JTextField();
+        add(textoApellido);
+
+        labelDocumento = new JLabel("Tipo de documento");
+        add(labelDocumento);
+
 
         comboTipodocumento = new JComboBox<>();
         comboTipodocumento.addItem("CC");
         comboTipodocumento.addItem("TI");
         comboTipodocumento.addItem("Pasaporte");
         add(comboTipodocumento);
-
-        labeldocumento = new JLabel("Documento");
-        add(labeldocumento);
-
+        
+        
+        labelDocumento =new JLabel("Documento");
+        add(labelDocumento);
+        
+        
         textoDocumento = new JTextField();
         add(textoDocumento);
+               
 
-        labelapellidos = new JLabel("Apellidos");
-        add(labelapellidos);
-
-        textoApellidos = new JTextField();
-        add(textoApellidos);
-
-        labelnombre = new JLabel("Nombre");
-        add(labelnombre);
-
-        textoNombre = new JTextField();
-        add(textoNombre);
-
-        labeltelefono = new JLabel("Telefono");
-        add(labeltelefono);
+        labelTelefono = new JLabel("Telefono");
+        add(labelTelefono);
 
         textoTelefono = new JTextField();
         add(textoTelefono);
 
-        labelcelular = new JLabel("Celular");
-        add(labelcelular);
+        labelCelular = new JLabel("Celular");
+        add(labelCelular);
 
         textoCelular = new JTextField();
         add(textoCelular);
 
-        labelmail = new JLabel("Correo Electronico");
-        add(labelmail);
+        labelGenero = new JLabel("Sexo");
+        add(labelGenero);
 
-        textoMail = new JTextField();
-        add(textoMail);
+                
+        comboTipodocumento = new JComboBox<>();
+        comboTipodocumento.addItem("Masculino");
+        comboTipodocumento.addItem("Femenino");
+        add(comboTipodocumento);
 
-        labelgenero = new JLabel("Genero");
-        add(labelgenero);
+        labelCorreo = new JLabel("Correo");
+        add(labelCorreo);
 
-        textoGenero = new JTextField();
-        add(textoGenero);
+        textoCorreo =new JTextField();
+        add(textoCorreo);
 
         labelpass = new JLabel("Contraseña");
         add(labelpass);
 
-        textoPass = new JTextField();
+        textoPass = new JPasswordField();
         add(textoPass);
 
         labelconfirmarpass = new JLabel("Confirmar Contraseña");
         add(labelconfirmarpass);
-
-        textoConfirmarpass = new JTextField();
-        add(textoConfirmarpass);
 
         botoncrearusuario = new JButton("Crear Usuario");
         add(botoncrearusuario);
@@ -127,11 +133,11 @@ public class Micuenta extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String tipoDocumento = (String) comboTipodocumento.getSelectedItem();
                 String documento = textoDocumento.getText();
-                String apellido = textoApellidos.getText();
+                String apellido = textoApellido.getText();
                 String nombre = textoNombre.getText();
                 int telefono = Integer.parseInt(textoTelefono.getText());
                 int celular = Integer.parseInt(textoCelular.getText());
-                String correo = textoMail.getText();
+                String correo = textoCorreo.getText();
                 String genero = textoGenero.getText();
                 String contrasena = textoPass.getText();
                 String confirmarpass = textoConfirmarpass.getText();
@@ -159,14 +165,14 @@ public class Micuenta extends JFrame {
         add(botonModificar);
         botonModificar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ev) {
+                textoNombre.setText("");
+                textoApellido.setText("");
                 comboTipodocumento.setSelectedIndex(0);
                 textoDocumento.setText("");
-                textoApellidos.setText("");
-                textoNombre.setText("");
                 textoTelefono.setText("");
                 textoCelular.setText("");
-                textoMail.setText("");
                 textoGenero.setText("");
+                textoCorreo.setText("");
                 textoPass.setText("");
                 textoConfirmarpass.setText("");
 

@@ -8,6 +8,7 @@ package MallApp2;
 
 import java.util.Iterator;
 
+
 public class ListaPropietario {
 
     public Nodo cab, cola;
@@ -51,7 +52,7 @@ public class ListaPropietario {
         int cont = 0;
         while (t != null) {
 
-            cont++;
+            cont=cont + 1;
             t = t.sig;
         }
         return cont;
@@ -73,6 +74,8 @@ public class ListaPropietario {
             return null;
         }
     }
+    
+    
     /**
     * Metodo para borrar los nodos de la lista
     *
@@ -100,11 +103,13 @@ public class ListaPropietario {
         }
     }
 
-    public Iterator<Usuario> iterator() {
+    public Iterator<Propietario> iterator() {
         return new IteradorLista();
     }
 
-    private class IteradorLista implements Iterator {
+   
+
+    public class IteradorLista implements Iterator {
 
         private Nodo actual = cab;
 

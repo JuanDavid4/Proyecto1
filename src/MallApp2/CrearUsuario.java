@@ -56,9 +56,9 @@ public class CrearUsuario extends JFrame {
     JPasswordField textoPass;
     JPasswordField textoConfirmarpass;
     JButton botoncrearusuario;
-    JButton botonEditarUsuario;
     JButton botonBuscar;
-    JButton botoneliminar;
+    JButton botonAtras;
+    JButton botonEliminar;
     JComboBox combo1;
     boolean editando;
 
@@ -202,17 +202,18 @@ public class CrearUsuario extends JFrame {
                 }
             }
         });
-        //Creamos un nuevo objeto y adiccionamos a la ventana
-        botonEditarUsuario = new JButton("Reestablecer");
-        add(botonEditarUsuario);
-        botonEditarUsuario.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent ev) {
-                comboTipodocumento.setSelectedIndex(0);
+        //Creamos un nuevo objeto y adiccionamos a la ventana con su respectiva opción
+        botonBuscar = new JButton("Buscar");
+        add(botonBuscar);
+        botonBuscar.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                
                 textonombre.setText("");
-                textoTipodoc.setText("");
                 textoApellido.setText("");
+                comboTipodocumento.setSelectedIndex(0);
+                textodocumento.setText("");
                 textoTelefono.setText("");
-                textoCorreo.setText("");
+                textoCelular.setText("");
                 textoGenero.setText("");
                 comboGenero.setSelectedIndex(0);
                 textoPass.setText("");
@@ -221,9 +222,9 @@ public class CrearUsuario extends JFrame {
             }
         });
         //Creamos un nuevo objeto y adiccionamos a la ventana
-        botonBuscar = new JButton("Buscar");
-        add(botonBuscar);
-        botonBuscar.addMouseListener(new MouseListener() {
+        botonAtras = new JButton("Atras");
+        add(botonAtras);
+        botonAtras.addMouseListener(new MouseListener() {
 
             @Override
             public void mouseClicked(MouseEvent ev) {
@@ -252,14 +253,14 @@ public class CrearUsuario extends JFrame {
             }
 
         });
-        botonBuscar = new JButton("Buscar");
-        add(botonBuscar);
+        botonEliminar = new JButton("Eliminar");
+        add(botonEliminar);
 
-        botoneliminar = new JButton("Eliminar cuenta");
+        botonEliminar = new JButton("Eliminar cuenta");
         if (editando == true) {
-            add(botoneliminar);
+            add(botonEliminar);
         }
-        botoneliminar.addMouseListener(new MouseListener() {
+        botonEliminar.addMouseListener(new MouseListener() {
 
             @Override
             public void mouseClicked(MouseEvent ev) {

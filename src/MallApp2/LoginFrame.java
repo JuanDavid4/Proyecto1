@@ -59,7 +59,7 @@ public class LoginFrame extends JFrame {
         setTitle("Acceso al sistema");
         setDefaultCloseOperation(EXIT_ON_CLOSE); //Que hacer cuando se presiona el boton cerrar
 
-        setIconImage(new ImageIcon(getClass().getResource("/MallApp2/imagenSw1.jpg")).getImage());
+        setIconImage(new ImageIcon(getClass().getResource("/MallApp2/fondo.jpg")).getImage());
 
         JPanel contenidoPanel = new PanelImagen();
         Border padding = BorderFactory.createEmptyBorder(0, 100, 0, 100);
